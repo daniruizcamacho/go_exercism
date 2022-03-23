@@ -5,5 +5,5 @@ help:   ## Show help.
 
 tests:  ## Run unit tests.
 	for d in ./*/ ; do \
-	 	(cd "$$d" && go get -v -t -d ./... && go test -v --race ./... -timeout 5000ms); \
+	 	(cd "$$d" && go get -v -t -d ./... && go test -v -failfast --race ./... -timeout 5000ms); \
 	done
