@@ -24,7 +24,7 @@ func TestCalculateWorkingCarsPerHour(t *testing.T) {
 			name:           "calculate working cars per hour for production rate 0",
 			productionRate: 0,
 			successRate:    100,
-			want:           0.0,
+			want:           10.0,
 		},
 		{
 			name:           "calculate working cars per hour for 100%% success rate",
