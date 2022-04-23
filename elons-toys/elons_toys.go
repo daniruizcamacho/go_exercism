@@ -11,15 +11,15 @@ func (car *Car) Drive() {
 	car.battery -= car.batteryDrain
 }
 
-func (car Car) DisplayDistance() string {
+func (car *Car) DisplayDistance() string {
 	return fmt.Sprintf("Driven %d meters", car.distance)
 }
 
-func (car Car) DisplayBattery() string {
+func (car *Car) DisplayBattery() string {
 	return fmt.Sprintf("Battery at %d%%", car.battery)
 }
 
-func (car Car) CanFinish(trackDistance int) bool {
+func (car *Car) CanFinish(trackDistance int) bool {
 	batteryNeedIt := trackDistance / car.speed * car.batteryDrain
 
 	if car.battery >= batteryNeedIt {
