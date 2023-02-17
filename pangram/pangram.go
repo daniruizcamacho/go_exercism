@@ -1,24 +1,13 @@
 package pangram
 
-import "unicode"
+import "strings"
 
-func IsPangram(input string) bool {
-	alphabetMap := make(map[string]bool)
-	alphabet := "abcdefghijklmnopqrstuvwxyz"
-
-	for _, letter := range alphabet {
-		alphabetMap[string(letter)] = false
-	}
-
-	for _, v := range input {
-		alphabetMap[string(unicode.ToLower(v))] = true
-	}
-
-	for _, v := range alphabetMap {
-		if !v {
+func IsPangram(s string) bool {
+	s = strings.ToLower(s)
+	for l := 'a'; l <= 'z'; l++ {
+		if !strings.ContainsRune(s, l) {
 			return false
 		}
 	}
-
 	return true
 }
